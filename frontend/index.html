@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🏆 2026 월드컵 예측센터</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo">🏆</span>
+        <div>
+          <h1 class="title">2026 월드컵 예측센터</h1>
+          <p class="subtitle">FIFA World Cup 2026™ — North America</p>
+        </div>
+      </div>
+      <div class="header-right" id="user-info">
+        <div class="user-text">
+          <div class="user-name" id="user-name">🐯 로딩중...</div>
+          <div class="user-level" id="user-level"></div>
+        </div>
+        <div class="user-avatar" id="user-avatar">🐯</div>
+      </div>
+    </header>
+
+    <!-- LIVE BANNER -->
+    <div class="banner" id="live-banner">
+      <div class="banner-header">
+        <span class="live-dot"></span>
+        <span class="live-text">LIVE</span>
+        <span class="banner-label">실시간 예측 현황</span>
+      </div>
+      <div class="banner-scroll" id="banner-scroll">
+        <div class="banner-item" data-idx="0">🔥 <b>김민수</b> 브라질 <b>3:1</b> 독일 예측</div>
+      </div>
+    </div>
+
+    <main class="main-grid">
+      <!-- LEFT: MATCH LIST -->
+      <section class="match-section" id="match-section">
+        <div class="date-nav" id="date-nav"></div>
+        <div id="match-list"></div>
+      </section>
+
+      <!-- RIGHT: SIDEBAR -->
+      <aside class="sidebar">
+        <!-- My Status -->
+        <div class="card" id="my-status-card">
+          <h3 class="card-title">👤 내 예측 현황</h3>
+          <div id="my-status-content">로딩중...</div>
+        </div>
+
+        <!-- Badges -->
+        <div class="card" id="badge-card">
+          <h3 class="card-title">🏅 내 뱃지</h3>
+          <div id="badge-content">로딩중...</div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="card" id="leaderboard-card">
+          <h3 class="card-title">🏆 예측 랭킹</h3>
+          <div id="leaderboard-content">로딩중...</div>
+        </div>
+
+        <!-- Special Predictions -->
+        <div class="card" id="special-card">
+          <h3 class="card-title">🎯 특수 예측</h3>
+          <div id="special-content">로딩중...</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
