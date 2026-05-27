@@ -1,0 +1,29 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(title="WC2026 Predictor API", version="0.1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/api/health")
+async def health():
+    return {"status": "ok", "version": "0.1.0"}
+
+# Import routers after app creation to avoid circular imports
+from routes.matches import router as matches_router
+from routes.predictions import router as predictions_router
+from routes.users import router as users_router
+from routes.leaderboard import router as leaderboard_router
+from routes.ai_predict import router as ai_predict_router
+
+app.include_router(matches_router, prefix="/api")
+app.include_router(predictions_router, prefix="/api")
+app.include_router(users_router, prefix="/api")
+app.include_router(leaderboard_router, prefix="/api")
+app.include_router(ai_predict_router, prefix="/api")
