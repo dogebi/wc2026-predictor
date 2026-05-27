@@ -1,4 +1,7 @@
-const API_BASE = '/api';
+const SUPABASE_URL = 'https://pemduyglnkcpbpoiqybb.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Q7PegGJriO6h7uukWuZV2A_dje1fk9T';
+
+export const API_BASE = '/api'; // Backend proxy
 
 export async function api(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
