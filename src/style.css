@@ -219,3 +219,193 @@ body {
 .special-label { font-size: 0.8125rem; }
 .special-value { font-size: 0.8125rem; font-weight: 700; color: var(--blue); }
 .special-value.empty { color: var(--text3); font-style: italic; font-weight: 400; }
+
+/* ===== MyKing AI PREDICT ===== */
+.ai-predict-wrapper { margin-top: 0.75rem; }
+.ai-predict-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(59,130,246,0.15));
+  border: 1px solid rgba(168,85,247,0.3);
+  border-radius: 2rem; padding: 0.375rem 1rem;
+  cursor: pointer; transition: all 0.2s;
+  color: var(--text);
+}
+.ai-predict-btn:hover {
+  background: linear-gradient(135deg, rgba(168,85,247,0.25), rgba(59,130,246,0.25));
+  border-color: rgba(168,85,247,0.5);
+  transform: translateY(-1px);
+}
+.ai-btn-icon { font-size: 0.875rem; }
+.ai-btn-text { font-size: 0.75rem; font-weight: 700; }
+.ai-btn-badge {
+  font-size: 0.6rem; padding: 0.0625rem 0.375rem;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  border-radius: 0.25rem; font-weight: 800;
+}
+.ai-panel {
+  margin-top: 0.75rem;
+  animation: slideDown 0.3s ease-out;
+}
+.ai-panel.hidden { display: none; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ai-loading {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 1rem; color: var(--text2); font-size: 0.8125rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 0.75rem;
+}
+.ai-spinner {
+  width: 1.25rem; height: 1.25rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Result Panel ── */
+.ai-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 0.75rem;
+}
+.ai-title { font-size: 0.875rem; font-weight: 800; }
+.ai-confidence {
+  font-size: 0.65rem; padding: 0.125rem 0.5rem;
+  background: rgba(34,197,94,0.15); color: var(--green);
+  border-radius: 0.25rem;
+}
+.ai-score-box {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; padding: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.75rem; margin-bottom: 0.75rem;
+}
+.ai-team { display: flex; align-items: center; gap: 0.375rem; }
+.ai-flag { font-size: 1.25rem; }
+.ai-team-name { font-size: 0.75rem; font-weight: 700; }
+.ai-score { display: flex; align-items: center; gap: 0.375rem; }
+.ai-score-num {
+  font-size: 1.75rem; font-weight: 900;
+}
+.ai-score-num.home { color: var(--blue); }
+.ai-score-num.away { color: var(--purple); }
+.ai-score-colon {
+  font-size: 1.5rem; font-weight: 900; color: var(--text3);
+}
+
+/* ── Probability Bars ── */
+.ai-prob-bars { margin-bottom: 0.75rem; }
+.ai-prob-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.ai-prob-label {
+  width: 4rem; font-size: 0.65rem; font-weight: 600; text-align: right;
+}
+.ai-prob-label.home { color: var(--blue); }
+.ai-prob-label.draw { color: var(--text3); }
+.ai-prob-label.away { color: var(--purple); }
+.ai-prob-bar-wrap {
+  flex: 1; height: 0.5rem; background: rgba(255,255,255,0.06);
+  border-radius: 999px; overflow: hidden;
+}
+.ai-prob-bar {
+  height: 100%; border-radius: 999px;
+  transition: width 0.5s ease-out;
+}
+.ai-prob-bar.draw-bar { background: var(--text3); }
+.ai-prob-val {
+  width: 2rem; font-size: 0.7rem; font-weight: 700; text-align: right;
+}
+.ai-verdict {
+  text-align: center; font-size: 0.8125rem; font-weight: 600;
+  padding: 0.5rem; background: rgba(255,255,255,0.04);
+  border-radius: 0.5rem; margin-bottom: 0.75rem;
+  color: var(--yellow);
+}
+
+/* ── Breakdown Sections ── */
+.ai-breakdown { }
+.ai-bd-title {
+  font-size: 0.75rem; font-weight: 700; color: var(--text2);
+  margin-bottom: 0.5rem;
+}
+.ai-bd-section {
+  background: rgba(255,255,255,0.03);
+  border-radius: 0.5rem; margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.ai-bd-header {
+  display: flex; align-items: center; gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255,255,255,0.04);
+  cursor: default;
+}
+.ai-bd-icon { font-size: 0.75rem; }
+.ai-bd-label { font-size: 0.7rem; font-weight: 700; flex: 1; }
+.ai-bd-weight {
+  font-size: 0.6rem; padding: 0.0625rem 0.375rem;
+  background: rgba(168,85,247,0.2); color: var(--purple);
+  border-radius: 0.25rem; font-weight: 800;
+}
+.ai-bd-body { padding: 0.5rem 0.75rem; }
+
+/* Power comparison */
+.ai-compare-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 0.25rem;
+}
+.ai-compare-left { font-size: 1rem; font-weight: 900; color: var(--blue); }
+.ai-compare-right { font-size: 1rem; font-weight: 900; color: var(--purple); }
+.ai-compare-label { font-size: 0.65rem; color: var(--text3); }
+.ai-power-bar-wrap {
+  display: flex; height: 0.375rem; border-radius: 999px; overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.ai-power-bar.home { background: var(--blue); }
+.ai-power-bar.away { background: var(--purple); }
+.ai-detail {
+  display: grid; gap: 0.25rem;
+}
+.ai-detail-item {
+  font-size: 0.65rem; color: var(--text2);
+  padding: 0.125rem 0;
+}
+
+/* Luck */
+.ai-luck-msg {
+  font-size: 0.75rem; font-weight: 600; margin-bottom: 0.375rem;
+}
+.ai-luck-msg.good { color: var(--green); }
+.ai-luck-msg.bad { color: var(--red); }
+.ai-luck-bar {
+  width: 100%; height: 0.375rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px; overflow: hidden;
+}
+.ai-luck-fill {
+  height: 100%; border-radius: 999px;
+  transition: width 0.5s;
+}
+.ai-luck-fill.good { background: linear-gradient(90deg, var(--green), var(--yellow)); }
+.ai-luck-fill.bad { background: linear-gradient(90deg, var(--red), var(--yellow)); }
+.ai-luck-label {
+  font-size: 0.65rem; color: var(--text3); margin-top: 0.25rem;
+}
+
+/* Weather */
+.ai-weather-display {
+  display: flex; gap: 0.75rem; margin-bottom: 0.375rem;
+}
+.ai-weather-display span {
+  font-size: 0.75rem; font-weight: 700;
+}
+.ai-weather-effect {
+  display: flex; gap: 0.75rem;
+}
+.ai-weather-effect span {
+  font-size: 0.65rem; color: var(--text3);
+}

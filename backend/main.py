@@ -20,8 +20,10 @@ from routes.matches import router as matches_router
 from routes.predictions import router as predictions_router
 from routes.users import router as users_router
 from routes.leaderboard import router as leaderboard_router
+from routes.ai_predict import router as ai_predict_router
 
 app.include_router(matches_router, prefix="/api")
 app.include_router(predictions_router, prefix="/api")
 app.include_router(users_router, prefix="/api")
 app.include_router(leaderboard_router, prefix="/api")
+app.include_router(ai_predict_router, prefix="/api")

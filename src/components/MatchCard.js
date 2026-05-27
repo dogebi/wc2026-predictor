@@ -1,4 +1,5 @@
 import { api, formatDate, formatTime } from '../utils/api.js';
+import { renderAiPredict } from './AiPredict.js';
 
 export function renderMatchList(matches, container, onPredict) {
   container.innerHTML = '';
@@ -54,9 +55,14 @@ export function renderMatchList(matches, container, onPredict) {
         : ''}
       <div class="predict-stats">
         <span>예측 ${m.predict_count || 0}명</span>
-        ${m.stats ? `<span>🇧🇷 ${m.stats.home_win}% / 🇩🇪 ${m.stats.away_win}% / 무 ${m.stats.draw}%</span>` : ''}
+        ${m.stats ? `<span>${m.home_flag} ${m.stats.home_win}% / ${m.away_flag} ${m.stats.away_win}% / 무 ${m.stats.draw}%</span>` : ''}
       </div>
     `;
+
+    // AI Prediction
+    if (m.status !== 'finished') {
+      renderAiPredict(m, card);
+    }
 
     // Attach event
     const btn = card.querySelector('.predict-btn');
